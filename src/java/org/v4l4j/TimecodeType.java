@@ -1,0 +1,68 @@
+/*
+ * The compilation of software known as V4L4J is distributed under the
+ * following terms:
+ *
+ * Copyright (c) 2015 Christopher Friedt. All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *   notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *   notice, this list of conditions and the following disclaimer in the
+ *   documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+
+package org.v4l4j;
+
+import java.util.*;
+
+public enum TimecodeType {
+
+	V4L2_TC_TYPE_24FPS,
+	V4L2_TC_TYPE_25FPS,
+	V4L2_TC_TYPE_30FPS,
+	V4L2_TC_TYPE_50FPS,
+	V4L2_TC_TYPE_60FPS,
+	;
+	
+	public int toInteger() {
+		return toInteger( this );
+	}
+	
+	static final TreeMap<Integer,TimecodeType> to = new TreeMap<Integer,TimecodeType>();  
+	static final TreeMap<TimecodeType,Integer> fro = new TreeMap<TimecodeType,Integer>();
+	
+	public static int toInteger( TimecodeType e ) {
+		return fro.get( e );
+	}
+	public static TimecodeType toEnum( int e ) {
+		return to.get( e );
+	}
+
+	static {
+		
+		to.put( 1, V4L2_TC_TYPE_24FPS );
+		to.put( 2, V4L2_TC_TYPE_25FPS );
+		to.put( 3, V4L2_TC_TYPE_30FPS );
+		to.put( 4, V4L2_TC_TYPE_50FPS );
+		to.put( 5, V4L2_TC_TYPE_60FPS );
+		
+		for( Map.Entry<Integer,TimecodeType> e: to.entrySet() ) {
+			fro.put( e.getValue(), e.getKey() );
+		}
+	}
+}

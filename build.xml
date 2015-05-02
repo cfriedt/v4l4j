@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!-- adapted from http://www.vogella.com/tutorials/ApacheAnt/article.html#antexample_buildxml -->
+<project name="v4l4j" default="main" basedir=".">
+
+  <property name="src.dir" location="src" />
+  <property name="build.dir" location="bin" />
+  <property name="dist.dir" location="dist" />
+
+  <target name="clean">
+    <delete dir="${build.dir}" />
+    <delete dir="${dist.dir}" />
+  </target>
+
+  <target name="makedir">
+    <mkdir dir="${build.dir}" />
+    <mkdir dir="${dist.dir}" />
+  </target>
+
+  <target name="compile" depends="clean, makedir">
+    <javac srcdir="${src.dir}" destdir="${build.dir}">
+      <classpath>
+      	<pathelement location="lib/jna.jar"/>
+      	<pathelement location="lib/platform.jar"/>
+      	<pathelement location="lib/jna-posix.jar"/>
+      </classpath>
+    </javac>
+  </target>
+
+  <target name="jar" depends="compile">
+    <jar destfile="${dist.dir}/v4l4j.jar" basedir="${build.dir}">
+      <manifest />
+    </jar>
+  </target>
+
+  <target name="main" depends="compile, jar">
+    <description>Main target</description>
+  </target>
+
+</project> 
