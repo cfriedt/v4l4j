@@ -28,7 +28,7 @@
 
 package org.v4l4j;
 
-class V4L4JDemo {
+class V4l4jDemo {
 	public static void main(String[] arg) {
 		try {
 			V4l4jFrameGrabber demo = new V4l4jFrameGrabber();
