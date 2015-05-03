@@ -46,18 +46,18 @@ public class V4L4JCapability extends Structure {
 
 	@Override
 	public String toString() {
-		return getClass().getName() + '@' + Integer.toHexString( hashCode() ) + ", "
-			"driver: " + new String(driver)
-			", "
-			"card: " + new String( card )
-			", "
-			"bus_info: " + new String( bus_info ) 
-			", "
-			"version: " + Integer.toHexString( version )
-			", "
-			"capabilities: " + Integer.toHexString( capabilities )
-			", "
-			"device_caps: " + Integer.toHexString( device_caps )
+		return getClass().getName() + '@' + Integer.toHexString( hashCode() ) + ", " +
+			"driver: " + new String(driver) +
+			", " +
+			"card: " + new String( card ) +
+			", " +
+			"bus_info: " + new String( bus_info ) + 
+			", " +
+			"version: " + Integer.toHexString( version ) +
+			", " +
+			"capabilities: " + Integer.toHexString( capabilities ) +
+			", " +
+			"device_caps: " + Integer.toHexString( device_caps ) +
 			"";
 	}
 

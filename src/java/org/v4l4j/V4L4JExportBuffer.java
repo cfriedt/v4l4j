@@ -45,16 +45,16 @@ public class V4L4JExportBuffer extends Structure {
 	
 	@Override
 	public String toString() {
-		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", "
-			"type: " + type
-			", "
-			"index: " + index
-			", "
-			"plane: " + plane
-			", "
-			"flags: " + Integer.toHexString( flags )
-			", "
-			"fd: " + fd
+		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", " +
+			"type: " + type +
+			", " +
+			"index: " + index +
+			", " +
+			"plane: " + plane +
+			", " +
+			"flags: " + Integer.toHexString( flags ) +
+			", " +
+			"fd: " + fd +
 			"";
 	}
 

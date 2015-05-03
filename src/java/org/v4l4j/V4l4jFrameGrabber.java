@@ -184,7 +184,7 @@ public class V4l4jFrameGrabber {
 
 		if ( null == pixel_format ) {
 			throw new IllegalStateException(
-				"no supported pixel formats ( " + supported_pixfmts + " ) "
+				"no supported pixel formats ( " + supported_pixfmts + " ) "  +
 				"found in available pixelf formats ( " + available_pixfmts + " )"
 			);
 		}

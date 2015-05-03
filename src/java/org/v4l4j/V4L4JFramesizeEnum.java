@@ -56,12 +56,12 @@ public class V4L4JFramesizeEnum extends Structure {
 	
 	@Override
 	public String toString() {
-		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", "
-			"index: " + index
-			", "
-			"pixel_format: " + Integer.toHexString( pixel_format )
-			", "
-			"type: " + Integer.toHexString( type )
+		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", " +
+			"index: " + index +
+			", " +
+			"pixel_format: " + Integer.toHexString( pixel_format ) +
+			", " +
+			"type: " + Integer.toHexString( type ) +
 			""; // XXX: add framesize
 	}
 

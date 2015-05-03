@@ -41,10 +41,10 @@ public class V4L4JFramesizeDiscrete extends Structure {
 
 	@Override
 	public String toString() {
-		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", "
-			"width: " + width
-			", "
-			"height: " + height
+		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", " +
+			"width: " + width +
+			", " +
+			"height: " + height +
 			"";
 	}
 

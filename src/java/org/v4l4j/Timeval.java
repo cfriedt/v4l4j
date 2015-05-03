@@ -41,10 +41,10 @@ public class Timeval extends Structure {
 
 	@Override
 	public String toString() {
-		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", "
-			"tv_sec: " + tv_sec
-			", "
-			"tv_usec: " + tv_usec
+		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", " +
+			"tv_sec: " + tv_sec +
+			", " +
+			"tv_usec: " + tv_usec +
 			"";
 	}
 

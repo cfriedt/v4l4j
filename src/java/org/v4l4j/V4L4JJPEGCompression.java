@@ -46,20 +46,20 @@ public class V4L4JJPEGCompression extends Structure {
 
 	@Override
 	public String toString() {
-		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", "
-			"quality: " + quality
-			", "
-			"APPn: " + APPn
-			", "
-			"APP_len: " + APP_len
-			", "
-			"APP_data: " + Arrays.asList( APP_data )
-			", "
-			"COM_len: " + COM_len
-			", "
-			"COM_data: " + Arrays.asList( COM_data )
-			", "
-			"minutes: " + Integer.toHexString( jpeg_markers )
+		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", " +
+			"quality: " + quality +
+			", " +
+			"APPn: " + APPn +
+			", " +
+			"APP_len: " + APP_len +
+			", " +
+			"APP_data: " + Arrays.asList( APP_data ) +
+			", " +
+			"COM_len: " + COM_len +
+			", " +
+			"COM_data: " + Arrays.asList( COM_data ) +
+			", " +
+			"minutes: " + Integer.toHexString( jpeg_markers ) +
 			"";
 	}
 

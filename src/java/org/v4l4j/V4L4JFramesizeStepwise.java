@@ -45,18 +45,18 @@ public class V4L4JFramesizeStepwise extends Structure {
 
 	@Override
 	public String toString() {
-		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", "
-			"min_width: " + min_width
-			", "
-			"max_width: " + max_width
-			", "
-			"step_width: " + step_width
-			", "
-			"min_height: " + min_height
-			", "
-			"max_height: " + max_height
-			", "
-			"step_height: " + step_height
+		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", " +
+			"min_width: " + min_width +
+			", " +
+			"max_width: " + max_width +
+			", " +
+			"step_width: " + step_width +
+			", " +
+			"min_height: " + min_height +
+			", " +
+			"max_height: " + max_height +
+			", " +
+			"step_height: " + step_height +
 			"";
 	}
 

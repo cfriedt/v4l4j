@@ -46,18 +46,18 @@ public class V4L4JTimecode extends Structure {
 
 	@Override
 	public String toString() {
-		return getClass().getName() + '@' + Integer.toHexString( hashCode() ) + ", "
-			"type: " + TimecodeType.toEnum( type )
-			", "
-			"flags: " + TimecodeFlag.asSet( flags )
-			", "
-			"frames: " + frames
-			", "
-			"seconds: " + seconds
-			", "
-			"minutes: " + minutes
-			", "
-			"hours: " + hours
+		return getClass().getName() + '@' + Integer.toHexString( hashCode() ) + ", " +
+			"type: " + TimecodeType.toEnum( type ) +
+			", " +
+			"flags: " + TimecodeFlag.asSet( flags ) +
+			", " +
+			"frames: " + frames +
+			", " +
+			"seconds: " + seconds +
+			", " +
+			"minutes: " + minutes +
+			", " +
+			"hours: " + hours +
 			"";
 	}
 

@@ -52,12 +52,12 @@ public class V4L4JPlane extends Structure {
 	
 	@Override
 	public String toString() {
-		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", "
-			"bytesused: " + bytesused
-			", "
-			"length: " + length
-			", "
-			"data_offset: " + Integer.toHexString( data_offset )
+		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", " +
+			"bytesused: " + bytesused +
+			", " +
+			"length: " + length +
+			", " +
+			"data_offset: " + Integer.toHexString( data_offset ) +
 			"";
 	}
 

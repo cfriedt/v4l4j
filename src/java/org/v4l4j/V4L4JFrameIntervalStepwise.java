@@ -42,12 +42,12 @@ public class V4L4JFrameIntervalStepwise extends Structure {
 
 	@Override
 	public String toString() {
-		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", "
-			"min: " + min
-			", "
-			"max: " + max
-			", "
-			"step: " + step
+		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", " +
+			"min: " + min +
+			", " +
+			"max: " + max +
+			", " +
+			"step: " + step +
 			"";
 	}
 

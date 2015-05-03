@@ -48,15 +48,15 @@ public class V4L4JFormatDescriptor extends Structure {
 
 	@Override
 	public String toString() {
-		return getClass().getName() + '@' + Integer.toHexString( hashCode() ) + ", "
-			"index: " + index
-			", "
-			"type: " + BufferType.toEnum( type )
-			", "
-			"flags: " + Integer.toHexString( flags )
-			", "
-			"description: '" + new String( description ) + "'"
-			", "
+		return getClass().getName() + '@' + Integer.toHexString( hashCode() ) + ", " +
+			"index: " + index +
+			", " +
+			"type: " + BufferType.toEnum( type ) +
+			", " +
+			"flags: " + Integer.toHexString( flags ) +
+			", " +
+			"description: '" + new String( description ) + "'" +
+			", " +
 			"pixelformat: " + PixelFormat.toEnum( pixelformat ) +			
 			"";
 	}

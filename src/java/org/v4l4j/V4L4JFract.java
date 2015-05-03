@@ -41,10 +41,10 @@ public class V4L4JFract extends Structure {
 
 	@Override
 	public String toString() {
-		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", "
-			"numerator: " + numerator
-			", "
-			"denominator: " + denominator
+		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", " +
+			"numerator: " + numerator +
+			", " +
+			"denominator: " + denominator +
 			"";
 	}
 

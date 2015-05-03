@@ -43,14 +43,14 @@ public class V4L4JRect extends Structure {
 
 	@Override
 	public String toString() {
-		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", "
-			"left: " + left
-			", "
-			"top: " + top
-			", "
-			"width: " + width
-			", "
-			"height: " + height
+		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", " +
+			"left: " + left +
+			", " +
+			"top: " + top +
+			", " +
+			"width: " + width +
+			", " +
+			"height: " + height +
 			"";
 	}
 

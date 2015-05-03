@@ -54,24 +54,24 @@ public class V4L4JPixelFormat extends Structure {
 	
 	@Override
 	public String toString() {
-		return getClass().getName() + '@' + Integer.toHexString( hashCode() ) + ", "
-			"width: " + width
-			", "
-			"height: " + height
-			", "
-			"pixelformat: " + PixelFormat.toEnum( pixelformat )
-			", "
-			"field: " + FieldType.toEnum( field )
-			", "
-			"bytesperline: " + bytesperline
-			", "
-			"sizeimage: " + sizeimage
-			", "
-			"colorspace: " + Colorspace.toEnum( colorspace )
-			", "
-			"priv: " + Integer.toHexString( priv )
-			", "
-			"flags: " + flags
+		return getClass().getName() + '@' + Integer.toHexString( hashCode() ) + ", " +
+			"width: " + width +
+			", " +
+			"height: " + height +
+			", " +
+			"pixelformat: " + PixelFormat.toEnum( pixelformat ) +
+			", " +
+			"field: " + FieldType.toEnum( field ) +
+			", " +
+			"bytesperline: " + bytesperline +
+			", " +
+			"sizeimage: " + sizeimage +
+			", " +
+			"colorspace: " + Colorspace.toEnum( colorspace ) +
+			", " +
+			"priv: " + Integer.toHexString( priv ) +
+			", " +
+			"flags: " + flags +
 			"";
 	}
 }

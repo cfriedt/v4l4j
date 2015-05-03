@@ -53,18 +53,18 @@ public class V4L4JFrameIntervalEnum extends Structure {
 	
 	@Override
 	public String toString() {
-		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", "
-			"index: " + index
-			", "
-			"pixel_format: " + Integer.toHexString( pixel_format )
-			", "
-			"width: " + width
-			", "
-			"height: " + height
-			", "
-			"type: " + Integer.toHexString( type )
-			", "
-			"frame_interval: " + frame_interval
+		return getClass().getName() + '@' + Integer.toHexString(hashCode()) + ", " +
+			"index: " + index +
+			", " +
+			"pixel_format: " + Integer.toHexString( pixel_format ) +
+			", " +
+			"width: " + width +
+			", " +
+			"height: " + height +
+			", " +
+			"type: " + Integer.toHexString( type ) +
+			", " +
+			"frame_interval: " + frame_interval +
 			"";
 	}
 
