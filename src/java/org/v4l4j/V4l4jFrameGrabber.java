@@ -28,14 +28,12 @@
 
 package org.v4l4j;
 
-import java.awt.*;
-import java.awt.image.*;
 import java.io.*;
 import java.nio.*;
 import java.nio.channels.*;
 import java.util.*;
 
-import javax.imageio.*;
+import ar.com.hjg.pngj.*;
 
 public class V4l4jFrameGrabber {
 	
@@ -60,7 +58,6 @@ public class V4l4jFrameGrabber {
 	int nbuf = 5;
 
 	RandomAccessFile raf;
-	int fdint;
 	FileDescriptor fd;
 	FileChannel fc;
 
@@ -299,16 +296,25 @@ public class V4l4jFrameGrabber {
 	}
 
 	void writePng() throws IOException {
-		DataBuffer data_buffer = new DataBufferByte( rgb24, rgb24.length );
-		WritableRaster raster = Raster.createInterleavedRaster( data_buffer, width, height, 3 * width, 3, new int[] { 0, 1, 2 }, new Point( 0, 0 ) );
-		ColorModel cm = new ComponentColorModel(ColorModel.getRGBdefault().getColorSpace(), false, true, Transparency.OPAQUE, DataBuffer.TYPE_BYTE); 
-		BufferedImage image = new BufferedImage(cm, raster, true, null);
-
-		D( "writing output file " + ofn );
-		
-		ImageIO.write( image, "png", new File( ofn ) );
-
-		D( "wrote output file " + ofn );
+		final int complevel = 9;
+		final int imgsize = PixelFormat.V4L2_PIX_FMT_RGB24.frameSize( width, height );
+		final int bytesperline = imgsize / height;
+		D( "writing PNG file '" + ofn + "'" );
+		ImageInfo ii = new ImageInfo( width, height, 8, false );
+		D( "created ImageInfo " + ii );
+		PngWriter pngw = new PngWriter( new File( ofn ), ii );
+		D( "created PngWriter " + pngw );
+		pngw.setCompLevel( complevel );
+		D( "set compression level to " + complevel );
+		D( "writing image of " + imgsize + " bytes" );
+		for(  int i = 0; i < height; i++ ) {
+			IImageLine iil = new ImageLineByte( ii, Arrays.copyOfRange( rgb24, i * bytesperline, ( i + 1 ) * bytesperline ) );
+			V( "created IImageLine " + iil + " from row " + i );
+			pngw.writeRow( iil );
+			V( "wrote row " + i );
+		}
+		pngw.end();
+		D( "wrote PNG file" );
 	}
 	
 	void main() throws IOException, InterruptedException {
